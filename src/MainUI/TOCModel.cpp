@@ -24,6 +24,7 @@
 #include <QtCore/QThread>
 #include <QtConcurrent/QtConcurrent>
 #include <QtWidgets/QApplication>
+#include <QtGui/QFont>
 
 #include "MainUI/TOCModel.h"
 #include "Misc/Utility.h"
@@ -199,6 +200,10 @@ void TOCModel::AddEntryToParentItem(const TOCEntry &entry, QStandardItem *parent
     item->setEditable(false);
     item->setDragEnabled(false);
     item->setDropEnabled(false);
+
+    QFont banglaFont("Siyam Rupali");
+    item->setFont(banglaFont);
+
     parent->appendRow(item);
     foreach(const TOCModel::TOCEntry & child_entry, entry.children) {
         AddEntryToParentItem(child_entry, item);

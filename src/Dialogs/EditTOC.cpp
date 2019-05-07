@@ -23,6 +23,8 @@
 #include <QtCore/QStringList>
 #include <QtGui/QStandardItem>
 #include <QKeyEvent>
+#include <QtGui/QFont>
+
 
 #include "BookManipulation/Book.h"
 #include "Dialogs/EditTOC.h"
@@ -305,6 +307,11 @@ void EditTOC::AddEntry(bool above)
     // Add a new empty row of items
     QStandardItem *entry_item = new QStandardItem();
     QStandardItem *target_item = new QStandardItem();
+
+    QFont banglaFont("Siyam Rupali");
+    entry_item->setFont(banglaFont);
+    target_item->setFont(banglaFont);
+
     QList<QStandardItem *> row_items;
     row_items << entry_item << target_item ;
     int location = 1;

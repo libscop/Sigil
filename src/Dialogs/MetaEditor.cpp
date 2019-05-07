@@ -25,6 +25,7 @@
 #include <QTextStream>
 #include <QDate>
 #include <QShortcut>
+#include <QtGui/QFont>
 
 #include "Dialogs/TreeModel.h"
 #include "Dialogs/AddMetadata.h"

@@ -22,6 +22,7 @@
 
 #include <QtCore/QStringList>
 #include <QtGui/QStandardItem>
+#include <QtGui/QFont>
 #include <QKeyEvent>
 
 #include "BookManipulation/Book.h"
@@ -646,6 +647,9 @@ void HeadingSelector::InsertHeadingIntoModel(Headings::Heading &heading, QStanda
     item_heading->setEditable(true);
     item_heading->setDragEnabled(false);
     item_heading->setDropEnabled(false);
+
+    QFont banglaFont("Siyam Rupali");
+    item_heading->setFont(banglaFont);
 
     if (heading.include_in_toc) {
         heading_included_check->setCheckState(Qt::Checked);
